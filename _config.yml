@@ -1,5 +1,0 @@
-defaults:
-  - scope:
-      path: "https://wjy2006.github.io/19260817" 
-    values:
-      layout: "default"
