@@ -2,13 +2,46 @@
 <html>
 <head>
     <script type="text/javascript">
-        function input(){
-            var code=Int(prompt("Please enter the code "));
-            alert("code");
-            if(code%1007==426){
-                alert("he");
+        var code;
+        function decrypt(n,m){
+            var k="";
+            for(i=0;i<n.length;i++){
+                k+=String.fromCharCode((n.charCodeAt(i)+m)%65536);
+            }
+            alert(k);
+        }
+        function run(){
+            switch(code%1007){
+                case 426: decrypt("䅫䍂㶍喂唃䷇伾㶣䍺晲旗唃䷇伾㶣",code);
+                case 131: decrypt("㷗㚛㠒♷휨휨휨❭㹖➇㹖☴㹖柿䓈柿㨸泘",code);
+                case 637: decrypt("猿茗瀳ﺵﺵﺵ敤帨徟丄ﺵﺵﺵﺵ",code);
+                case 741: decrypt("⥷䙳䔤澈㉹㈀䔤录℺㭪ṵ",code);
+                case 345: decrypt("劑੃㉘࡛ẫᝯᣦ݋렇ੱ␜ᬌ᧮䓯ۻ㢉ਾᬌᣀ᯺܆",code);
+                case 58: decrypt("洤埝䢸㒴庌盺㘇䳖犨㒴癮狉狉㘇牗䘾䢸崫密䲌",code);
+                case 935: decrypt("鵎沘煬瘥辎藪楔᥻盱煏鏧鏾ꫮꟺ梺",code);
+                case 340: decrypt("፭੃",code);
+                case 865: decrypt("୓ᶜ鷑⪇⪇⹅ₜﲣᔶᏑҗ",code);
+                case 671: decrypt("㨒僗僗㚽缧㚽㼌䷡䚥䠜㚁",code);
+                case 670: decrypt("䩃㘿弪㠓",code);
+                case 685: decrypt("琚㬢䬔墎瑅瑅",code);
+                case 770: decrypt("䣭珰㤛甇㱶现㘞",code);
+                case 746: decrypt("靯靯ਖ਼蒪媭烽槁欸妝੕鬦奚煼諱弞੖",code);
+                case 665: decrypt("䷧䚫䠢㚇㠔䫛㞗芣㙁䑨㙄书㦟慵㝑庻畚㜲㚽㴝",code);
+                case 891: decrypt("桒㕢桒㦀䕻岊蛮㗛",code);
             }
         }
+        function input(){
+            var str=prompt("八位");
+            if(str.length==8) {
+                code=Number(str);
+                run();
+            }
+            else {
+                alert("您输入的不是八位");
+                input();
+            }
+        }
+            
         input();
     </script>
 </head>
